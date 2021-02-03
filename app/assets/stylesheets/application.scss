@@ -13,4 +13,21 @@
  */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "variables";
 @import "bootstrap";
+
+.form-label {
+  font-size: small;
+  font-weight: bold;
+}
+
+.header {
+  border-bottom: 2px solid $darkerGray;
+
+  padding-top: 25px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-weight: bolder;
+}

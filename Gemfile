@@ -6,6 +6,7 @@ ruby "2.7.2"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~> 5.0.0.beta1"
 gem "devise"
+gem "devise-bootstrap-views"
 gem "image_processing", "~> 1.2"
 gem "pg"
 gem "puma", "~> 5.0"
