@@ -61,4 +61,16 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include ::Devise::Test::IntegrationHelpers, :type => :system
+  config.include ::FactoryBot::Syntax::Methods
+end
+
+# Now you're ready to use matchers in your tests!
+# https://github.com/thoughtbot/shoulda-matchers#usage
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end
