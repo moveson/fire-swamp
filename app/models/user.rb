@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable
 
+  has_many :messages, dependent: :destroy
+
   validates_presence_of :username
   validates_presence_of :parameterized_username
 
