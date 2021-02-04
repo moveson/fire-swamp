@@ -7,8 +7,11 @@ require_relative "config/application"
 
 Rails.application.load_tasks
 
-require "rubocop/rake_task"
-RuboCop::RakeTask.new
+begin
+  require "rubocop/rake_task"
+  RuboCop::RakeTask.new
 
-Rake::Task["default"].clear if Rake::Task.task_defined?("default")
-task default: [:rubocop, :spec]
+  Rake::Task["default"].clear if Rake::Task.task_defined?("default")
+  task default: [:rubocop, :spec]
+rescue LoadError # rubocop:disable Lint/SuppressedException
+end
