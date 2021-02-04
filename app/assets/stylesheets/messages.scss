@@ -2,6 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.fs-7 {
-  font-size: x-small;
+.message {
+  time {
+    font-weight: 300;
+    font-size: x-small;
+  }
+  .username {
+    font-weight: bold;
+  }
+}
+
+.message.current-user {
+  .username::before {
+    font-family: "Font Awesome 5 Free", "sans-serif";
+    content: "\f0da";
+  }
+}
+
+.message .first-row {
+  margin-top: 5px;
+  margin-bottom: -3px;
+}
+
+.message {
+  .action-link {
+    font-weight: 300;
+    font-size: x-small;
+  }
 }

@@ -14,6 +14,10 @@ export default class extends Controller {
         }
 
         this.element.scrollIntoView({ block: 'nearest' })
+
+        if (this.authorIdValue === currentUserId()) {
+            this.element.classList.add("current-user")
+        }
     }
 
     toggleActions() {
