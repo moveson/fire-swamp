@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
-  validates_presence_of :username
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates_presence_of :parameterized_username
 
   before_validation :set_parameterized_username, if: :username_changed?

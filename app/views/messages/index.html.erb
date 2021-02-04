@@ -1,0 +1,12 @@
+<%= turbo_stream_from "fire_swamp_chat_channel" %>
+
+<div class='d-flex flex-column h-100'>
+  <div class='flex-grow-1 d-flex flex-column overflow-auto message-list' id='messages'
+       data-controller='message-list' data-action='resize@window->message-list#scrollToBottom'>
+    <%= render partial: 'messages/message', collection: @messages, cached: true %>
+  </div>
+
+  <%= turbo_frame_tag @new_message, class: 'flex-shrink-0 px-3 pb-3 pt-2' do %>
+    <%= render 'messages/form', message: @new_message %>
+  <% end %>
+</div>

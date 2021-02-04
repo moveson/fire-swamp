@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :message do
-    user
+    association :author, factory: :user
     content { "Hello world" }
   end
 end
