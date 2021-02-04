@@ -3,18 +3,18 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand fw-bolder" href="#">FireSwamp</a>
+    <%= link_to "FireSwamp", authenticated_root_path, class: "navbar-brand fw-bolder" %>
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
-          <%= link_to "My Page", "#", class: "nav-link" %>
+          <%= link_to "My Page", page_path(current_user), class: "nav-link" %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               ROUSes
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <% ::User.all.each do |user| %>
-                <li><a class="dropdown-item" href="#"><%= user.username %></a></li>
+                <li><%= link_to user.username, page_path(user), class: "dropdown-item" %></li>
               <% end %>
             </ul>
           </li>
