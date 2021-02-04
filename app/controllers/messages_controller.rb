@@ -2,14 +2,19 @@
 
 class MessagesController < ApplicationController
   before_action :set_message, only: [:update, :edit, :destroy, :show]
-  before_action :authorize_message, except: [:create]
+  before_action :authorize_message, except: [:create, :index]
+
+  def index
+    @messages = ::Message.includes(:author).order(:created_at)
+    @new_message = Message.new
+  end
 
   def create
     @message = ::Message.new(message_params)
     @message.author = current_user
 
     if @message.save
-      render turbo_stream: turbo_stream.append(:messages, @message)
+      # render turbo_stream: turbo_stream.append(:messages, @message)
     else
       render "new", layout: false, status: :unprocessable_entity
     end

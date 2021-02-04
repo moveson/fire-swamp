@@ -9,13 +9,17 @@ class Message < ApplicationRecord
     "fire_swamp_chat_channel"
   end
 
-  private
-
-  def chat_channel
-    self.class.chat_channel
+  def author_id
+    user_id
   end
 
   def edited?
     created_at != updated_at
+  end
+
+  private
+
+  def chat_channel
+    self.class.chat_channel
   end
 end

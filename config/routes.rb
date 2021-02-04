@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   resources :pages, only: :show
+  resources :messages
 end
