@@ -15,6 +15,7 @@ gem "pundit"
 gem "rails", "~> 6.1.1"
 gem "redis", "~> 4.0"
 gem "sass-rails", ">= 6"
+gem "stimulus-rails"
 gem "turbo-rails"
 gem "webpacker", "~> 5.0"
 
