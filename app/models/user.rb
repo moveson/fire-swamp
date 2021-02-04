@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :validatable
 
-  validates_presence_of :username
+  has_many :messages, dependent: :destroy
+
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates_presence_of :parameterized_username
 
   before_validation :set_parameterized_username, if: :username_changed?
