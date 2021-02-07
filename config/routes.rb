@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     get "timeout" => "users/sessions#timeout"
   end
 
-  resources :pages, only: :show
-  resources :messages
+  authenticate :user do
+    resources :pages, only: :show
+    resources :messages
+  end
 end
