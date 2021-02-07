@@ -51,6 +51,9 @@ Metrics/ModuleLength:
 
 # Styles that are modified from the defaults
 
+Naming/VariableNumber:
+  Enabled: false # variables like message_1 are actually better
+
 Style/Alias:
   Description: Use alias_method instead of alias in a class or module body
   EnforcedStyle: prefer_alias_method

@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "log in", type: :system do
   let(:initial_path) { new_user_session_path }
-  let(:username) { "rousguy"}
+  let(:username) { "rousguy" }
   let(:password) { "12345678" }
   before { create(:user, username: username, password: password, password_confirmation: password) }
 
