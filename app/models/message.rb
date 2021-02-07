@@ -5,6 +5,8 @@ class Message < ApplicationRecord
 
   validates_presence_of :author, :content
 
+  scope :newer_than, ->(duration) { where("created_at > ?", Time.current - duration) }
+
   def self.chat_channel
     "fire_swamp_chat_channel"
   end

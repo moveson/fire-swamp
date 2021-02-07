@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   before_action :authorize_message, except: [:create, :index]
 
   def index
-    @messages = ::Message.includes(:author).order(:created_at)
+    @messages = ::Message.newer_than(24.hours).includes(:author).order(:created_at)
     @new_message = Message.new
   end
 
