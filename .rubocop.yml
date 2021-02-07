@@ -92,3 +92,6 @@ Style/StringLiterals:
 Style/SymbolArray:
   Description: Checks for symbol arrays using the %i() syntax
   EnforcedStyle: brackets
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false

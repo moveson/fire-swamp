@@ -8,13 +8,8 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
 
     <div class="mb-3 required">
-      <%= f.label :email, class: "form-label" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-    </div>
-
-    <div class="mb-3 required">
       <%= f.label :username, class: "form-label" %>
-      <%= f.text_field :username, autocomplete: 'username', class: 'form-control' %>
+      <%= f.text_field :username, autofocus: true, autocomplete: 'username', class: 'form-control' %>
     </div>
 
     <div class="mb-3 required">
@@ -29,6 +24,11 @@
     <div class="mb-3 required">
       <%= f.label :password_confirmation, class: "form-label" %>
       <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+    </div>
+
+    <div class="mb-3 required">
+      <%= label_tag(:sign_up_token, "Sign Up Token", class: "form-label") %>
+      <%= password_field_tag(:sign_up_token, nil, class: "form-control") %>
     </div>
 
     <div class="mb-3">
