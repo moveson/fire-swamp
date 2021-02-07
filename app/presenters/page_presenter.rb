@@ -46,7 +46,7 @@ class PagePresenter
   attr_reader :current_user, :username_param
 
   def same_user?
-    current_user.parameterized_username == username_param
+    current_user&.parameterized_username == username_param
   end
 
   def different_user?
