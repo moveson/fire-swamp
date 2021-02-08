@@ -38,7 +38,7 @@ class PagePresenter
   end
 
   def username
-    requested_user.username
+    requested_user&.username
   end
 
   private
