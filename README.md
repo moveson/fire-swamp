@@ -1,24 +1,5 @@
-# README
+# The Fire Swamp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A place for the ROUSes of the Oak Hills 5th Ward to hang out, share their thoughts, and learn to code.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The chat system is heavily based on https://github.com/mdominiak/hotwire-chat. Credit to Mateusz Dominiak.
